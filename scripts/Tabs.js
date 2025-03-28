@@ -95,7 +95,7 @@ class Tabs {
         }
 
         const isMacEndKey = metaKey && code === 'ArrowRight'
-        if(isMacHomeKey) {
+        if(isMacEndKey) {
             this.lastTab()
             return
         }
