@@ -457,6 +457,9 @@ button[aria-label]::before {
 .icon--yellow-arrow::after {
   background-image: url(/icons/arrow-top-right_yellow.svg);
 }
+.icon--yellow-eye::after {
+  background-image: url(/icons/eye.svg);
+}
 
 .logo {
   max-width: clamp(7.875rem, 7.0306372549rem + 3.4640522876vw, 11.1875rem);
