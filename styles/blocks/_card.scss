@@ -13,16 +13,17 @@
         padding-right: 0;
 
         @include tablet {
-            padding: rem(30) rem(16);
+            padding: rem(30) 0;
         }
     }
 
     &__preview {
-        padding-left: 0;
         display: flex;
-        row-gap: fluid(60, 20);
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
+        row-gap: fluid(60, 20);
+        padding-left: 0;
+        padding-right: rem(80);
 
         @include tablet-above {
             border-right: var(--border);
@@ -37,6 +38,10 @@
         &-main {
             display: grid;
             row-gap: fluid(50,24);
+
+            @include tablet {
+                justify-content: start;
+            }
         }
 
         &-icon {
@@ -60,6 +65,21 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        &--2-cols-alt {
+            display: grid;
+            row-gap: rem(30);
+            column-gap: rem(20);
+    
+            @include laptop {
+                row-gap: rem(24);
+                column-gap: rem(16);
+            }
+
+            @include mobile-above {
+                grid-template-columns: auto 1fr;
+            }
+        }
     }
 
     &__cell {
@@ -67,5 +87,39 @@
         justify-content: center;
         flex-direction: column;
         row-gap: fluid(20, 4);
+
+        &--wide {
+            grid-column: -1 / 1;
+        }
+
+        &:has(> *:only-child) {
+            justify-content: center;
+        }
+
+        &:has(.card__cell-link) {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-areas: 
+                'other link'
+                'other link';
+                column-gap: rem(20);
+                align-items: center;
+        }
+
+        &-image {
+            width: 100%;
+            height: fluid(322, 169);
+            object-fit: cover;
+            border-radius: rem(12);
+        }
+
+        &-subtitle {
+            font: inherit;
+            color: inherit;
+        }
+
+        &-link {
+            grid-area: link;
+        }
     }
 }

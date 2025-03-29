@@ -31,4 +31,8 @@
         border-radius: rem(8);
         padding: rem(14) rem(20);
     }
+
+    &--dark-gray {
+        background-color: var(--color-dark-10);
+    }
 }
