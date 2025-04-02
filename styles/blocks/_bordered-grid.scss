@@ -29,7 +29,7 @@
                 }
     
                 &:nth-child(3n -1) {
-                    @include full-vw-centered-line(bottom)
+                    @include full-vw-centered-line()
                 }
     
                 &:nth-child(3n - 1),

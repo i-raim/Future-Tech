@@ -1487,8 +1487,8 @@ button[aria-label]::before {
     left: 50%;
     translate: -50%;
     content: "";
-    bottom: 0;
-    width: 100vw;
+    top: 0;
+    width: 200vh;
     height: 0.0625rem;
     background-color: var(--color-dark-15);
   }
