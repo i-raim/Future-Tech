@@ -1305,20 +1305,21 @@ button[aria-label]::before {
 }
 
 .person-card {
+  --imageSize: 5rem;
   display: flex;
   align-items: center;
   column-gap: clamp(0.5rem, 0.3725490196rem + 0.522875817vw, 1rem);
   align-self: start;
 }
+@media (width <= 90.06125rem) {
+  .person-card {
+    --imageSize: 3.75rem;
+  }
+}
 .person-card__image {
-  width: 5rem;
+  width: var(--imageSize);
   border-radius: 50%;
   background-color: var(--color-dark-15);
-}
-@media (width <= 90.06125rem) {
-  .person-card__image {
-    width: 3.75rem;
-  }
 }
 .person-card__body {
   display: grid;
@@ -1457,7 +1458,7 @@ button[aria-label]::before {
 
 .bordered-grid {
   --columns: 1;
-  --itemPaddingY: fluid(80, 40);
+  --itemPaddingY: clamp(2.5rem, 1.862745098rem + 2.614379085vw, 5rem);
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
 }
@@ -1492,6 +1493,34 @@ button[aria-label]::before {
 }
 .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1), .bordered-grid--3-cols .bordered-grid__item:nth-child(3n) {
   padding-left: var(--itemPaddingX);
+}
+.bordered-grid__item {
+  padding-block: var(--itemPaddingY);
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+@media (width <= 90.06125rem) {
+  .review-card {
+    row-gap: 1.875rem;
+  }
+}
+.review-card__author {
+  --imageSize: 3.75rem;
+}
+@media (width <= 90.06125rem) {
+  .review-card__author {
+    --imageSize: 3.125rem;
+  }
+}
+.review-card__body {
+  padding: clamp(1.25rem, 1.0906862745rem + 0.6535947712vw, 1.875rem);
+  padding-top: clamp(1.875rem, 1.556372549rem + 1.3071895425vw, 3.125rem);
+  color: var(--color-light);
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
