@@ -1573,4 +1573,69 @@ button[aria-label]::before {
   top: 0;
 }
 
+.about {
+  padding-block: clamp(2.5rem, 1.2254901961rem + 5.2287581699vw, 7.5rem);
+  background-color: var(--color-dark-10);
+}
+.about__inner {
+  display: grid;
+  row-gap: clamp(2.5rem, 1.5441176471rem + 3.9215686275vw, 6.25rem);
+}
+.about__header {
+  display: grid;
+  grid-template-columns: auto, 1fr;
+  column-gap: clamp(1.25rem, 0.2941176471rem + 3.9215686275vw, 5rem);
+  grid-template-areas: "icon info" "icon description";
+  row-gap: 1.875rem;
+  align-items: center;
+}
+@media (width <= 90.06125rem) {
+  .about__header {
+    row-gap: 1.25rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .about__header {
+    row-gap: 0.25rem;
+    grid-template-areas: "icon subtitle" "title title" "description description";
+  }
+}
+.about__icon {
+  grid-area: icon;
+  width: clamp(3.75rem, 2.3161764706rem + 5.8823529412vw, 9.375rem);
+}
+.about__info {
+  display: grid;
+  row-gap: 1rem;
+}
+@media (width <= 90.06125rem) {
+  .about__info {
+    row-gap: 0.625rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .about__info {
+    display: contents;
+  }
+}
+.about__subtitle {
+  justify-self: start;
+}
+@media (width <= 47.99875rem) {
+  .about__subtitle {
+    grid-area: subtitle;
+  }
+}
+@media (width <= 47.99875rem) {
+  .about__title {
+    grid-area: title;
+    margin-top: 1.25rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .about__description {
+    grid-area: description;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
