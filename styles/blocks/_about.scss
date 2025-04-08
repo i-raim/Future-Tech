@@ -70,4 +70,21 @@
             grid-area: description;
         }
     }
+
+    &__list {
+        display: grid;
+        padding: rem(20);
+        border-radius: rem(12);
+        background-color: var(--color-dark);
+        gap: rem(20);
+
+        @include laptop {
+            padding: rem(10);
+            gap: rem(10);
+        }
+
+        @include mobile-above {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 }
